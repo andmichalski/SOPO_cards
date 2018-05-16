@@ -7,6 +7,9 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 
+user = ""
+user_password = ""
+
 driver = webdriver.Firefox()
 
 #  Open site
@@ -14,10 +17,10 @@ driver.get("http://geoportal.pgi.gov.pl/sopo-web/zad/tasklist")
 
 # Login
 username = driver.find_element_by_name("ssousername")
-username.send_keys("amich")
+username.send_keys(user)
 
 password = driver.find_element_by_name("password")
-password.send_keys("amich445%")
+password.send_keys(user_password)
 
 OK_button = driver.find_element_by_xpath('/html[1]/body[1]/center[1]/form[1]/table[1]/tbody[1]/tr[3]/td[1]/table[1]/tbody[1]/tr[1]/td[1]/input[1]')
 OK_button.click()
